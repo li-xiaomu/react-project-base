@@ -17,7 +17,6 @@ function Home() {
     id: '1',
   });
   const onMenu: MenuProps['onClick'] = (e) => {
-    console.log(e);
     const keyPath = e.keyPath;
     const path = keyPath.reverse().join('');
     navigate(`${path}?${query}`);
