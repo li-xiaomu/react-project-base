@@ -1,6 +1,6 @@
-import News from 'views/news'; // 根组件
+import News from '@/views/news'; // 根组件
 import Home from '@/views/home'; // 首页组件
-import About from 'views/about'; // 关于我们页面组件
+import About from '@/views/about'; // 关于我们页面组件
 import { UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 
 export const SonRoute = [
