@@ -40,10 +40,10 @@ module.exports = {
     port: 1888,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000', // 后端服务器地址
+        target: 'https://www.apple.com.cn', // 后端服务器地址
         changeOrigin: true,
         pathRewrite: {
-          '^/api': '', // 将 '/api' 前缀去掉
+          '^/api': '/', // 将 '/api' 前缀去掉
         },
         // onProxyReq: (proxyReq, req, res) => {
         //   // 在这里可以对请求进行一些自定义操作

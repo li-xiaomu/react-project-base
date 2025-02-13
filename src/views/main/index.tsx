@@ -2,6 +2,8 @@ import logo from '@/assets/images/logo.svg'
 import { useRecoilState } from 'recoil'
 import { aboutData } from '@/views/main/atom'
 import { Button } from 'antd'
+import { useEffect } from 'react'
+import { getListApi } from '@/api'
 function Home() {
   const [data, setData] = useRecoilState(aboutData)
   const cssobj = {
@@ -9,6 +11,15 @@ function Home() {
       width: '200px',
       height: 'auto',
     },
+  }
+  useEffect(() => {}, [])
+  const getList = () => {
+    const data = { locale: 'zh_CN' }
+    try {
+      getListApi(data).then((res: any) => {})
+    } catch (error) {
+      console.log(error)
+    }
   }
   // interface objVal {
   //   name: string,
@@ -32,6 +43,9 @@ function Home() {
         }}
       >
         更改名称
+      </Button>
+      <Button type="primary" onClick={getList}>
+        获取数据
       </Button>
     </div>
   )
