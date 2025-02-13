@@ -38,6 +38,23 @@ module.exports = {
   // },
   devServer: {
     port: 1888,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000', // 后端服务器地址
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '', // 将 '/api' 前缀去掉
+        },
+        // onProxyReq: (proxyReq, req, res) => {
+        //   // 在这里可以对请求进行一些自定义操作
+        //   console.log('Request sent to backend:', req.url);
+        // },
+        // onProxyRes: (proxyReq, req, res) => {
+        //   // 在这里可以对响应进行一些自定义操作
+        //   console.log('Response received from backend:', res.statusCode);
+        // },
+      }
+    },
     // 其他配置...
   },
 };
