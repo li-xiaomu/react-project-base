@@ -16,7 +16,8 @@ function Home() {
   const getList = () => {
     const data = { locale: 'zh_CN' }
     try {
-      getListApi(data).then((res: any) => {})
+      getListApi(data).then((res: any) => {
+      })
     } catch (error) {
       console.log(error)
     }
